@@ -20,7 +20,7 @@ Objects in JavaScript are like containers that hold related data and functions t
   // bad
   const student = {
     id: 1,
-    name: 'Ilham',
+    name: 'Ilham'
   };
 
   // good
@@ -118,11 +118,12 @@ Objects in JavaScript are like containers that hold related data and functions t
   ```
 
 - Only quote properties that are invalid identifiers. eslint: `quote-props`
+
   ```javascript
   // bad
   const bad = {
-    foo: 3,
-    bar: 4,
+    'foo': 3,
+    'bar': 4,
     'data-blah': 5,
   };
 
@@ -133,7 +134,9 @@ Objects in JavaScript are like containers that hold related data and functions t
     'data-blah': 5,
   };
   ```
+
 - Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`. eslint: `no-prototype-builtins`
+
   ```javascript
   // bad
   console.log(object.hasOwnProperty(key));
@@ -154,6 +157,7 @@ Objects in JavaScript are like containers that hold related data and functions t
   /* or */
   console.log(Object.hasOwn(object, key)); // https://www.npmjs.com/package/object.hasown
   ```
+
 - Prefer the object spread syntax over `Object.assign` to shallow-copy objects. Use the object rest parameter syntax to get a new object with certain properties omitted. eslint: `prefer-object-spread`
 
   ```javascript
